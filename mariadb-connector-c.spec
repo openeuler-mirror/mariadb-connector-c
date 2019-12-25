@@ -3,7 +3,7 @@ Version:        3.0.6
 Release:        3
 Summary:        MariaDB connector library in C
 License:        LGPLv2+
-Url:            https://github.com/MariaDB/mariadb-connector-c
+URL:            https://github.com/MariaDB/mariadb-connector-c
 Source:         https://downloads.mariadb.org/interstitial/connector-c-%{version}/mariadb-connector-c-%{version}-src.tar.gz
 #Source2-3 come from fedora29
 Source2:        my.cnf
