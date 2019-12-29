@@ -1,6 +1,6 @@
 Name:           mariadb-connector-c
 Version:        3.0.6
-Release:        3
+Release:        4
 Summary:        MariaDB connector library in C
 License:        LGPLv2+
 URL:            https://github.com/MariaDB/mariadb-connector-c
@@ -83,20 +83,29 @@ end
 %files
 %doc README
 %license COPYING.LIB
+%dir %{_sysconfdir}/my.cnf.d
 %config(noreplace) %{_sysconfdir}/my.cnf
 %config(noreplace) %{_sysconfdir}/my.cnf.d/client.cnf
 %dir %{_libdir}/mariadb
 %{_libdir}/libmariadb.so.*
+%dir %{_libdir}/mariadb/plugin
 %{_libdir}/mariadb/plugin/*
 %exclude %{_libdir}/*.a
 
 %files devel
 %{_bindir}/mariadb_config
 %{_bindir}/mysql_config
+%dir %{_includedir}/mysql
 %{_includedir}/mysql/*
 %{_libdir}/*.so
 
 %changelog
+* Sun Dec 29 2019 openEuler Buildteam <buildteam@openeuler.org> - 3.0.6-4
+- Type:bugfix
+- ID:NA
+- SUG:restart
+- DESC:add the needed dir
+
 * Wed Jul 18 2018 openEuler Buildteam <buildteam@openeuler.org> - 3.0.6-3
 - Package init
 
