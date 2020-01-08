@@ -1,13 +1,10 @@
 Name:           mariadb-connector-c
 Version:        3.0.6
-Release:        4
+Release:        5
 Summary:        MariaDB connector library in C
 License:        LGPLv2+
 URL:            https://github.com/MariaDB/mariadb-connector-c
-Source:         https://downloads.mariadb.org/interstitial/connector-c-%{version}/mariadb-connector-c-%{version}-src.tar.gz
-#Source2-3 come from fedora29
-Source2:        my.cnf
-Source3:        client.cnf
+Source0:        https://downloads.mariadb.com/Connectors/c/connector-c-%{version}/mariadb-connector-c-%{version}-src.tar.gz
 
 BuildRequires:  libcurl-devel zlib-devel openssl-devel
 BuildRequires:  cmake git
@@ -59,8 +56,6 @@ ln -s mariadb_config %{buildroot}%{_bindir}/mysql_config
 ln -s mariadb_version.h %{buildroot}%{_includedir}/mysql/mysql_version.h
 mkdir -p %{buildroot}%{_sysconfdir}/
 mkdir -p %{buildroot}%{_sysconfdir}/my.cnf.d
-install -p -m 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/my.cnf
-install -p -m 0644 %{SOURCE3} %{buildroot}%{_sysconfdir}/my.cnf.d/client.cnf
 
 %check
 %{buildroot}%{_bindir}/mariadb_config
@@ -84,8 +79,6 @@ end
 %doc README
 %license COPYING.LIB
 %dir %{_sysconfdir}/my.cnf.d
-%config(noreplace) %{_sysconfdir}/my.cnf
-%config(noreplace) %{_sysconfdir}/my.cnf.d/client.cnf
 %dir %{_libdir}/mariadb
 %{_libdir}/libmariadb.so.*
 %dir %{_libdir}/mariadb/plugin
@@ -100,6 +93,12 @@ end
 %{_libdir}/*.so
 
 %changelog
+* Wed Jan 8 2020 openEuler Buildteam <buildteam@openeuler.org> - 3.0.6-5
+- Type:enhance
+- ID:NA
+- SUG:restart
+- DESC:repackaged
+
 * Sun Dec 29 2019 openEuler Buildteam <buildteam@openeuler.org> - 3.0.6-4
 - Type:bugfix
 - ID:NA
