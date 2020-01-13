@@ -1,6 +1,6 @@
 Name:           mariadb-connector-c
 Version:        3.0.6
-Release:        5
+Release:       	6
 Summary:        MariaDB connector library in C
 License:        LGPLv2+
 URL:            https://github.com/MariaDB/mariadb-connector-c
@@ -19,7 +19,6 @@ MySQL database.
 
 %package devel
 Summary:        Mariadb-connector-c library and header files
-BuildRequires:  multilib-rpm-config
 Requires:       %{name} = %{version}-%{release}
 Requires:       openssl-devel
 
@@ -51,7 +50,6 @@ This package includes library and header files for development.
 
 %install
 %make_install
-%multilib_fix_c_header --file %{_includedir}/mysql/mariadb_version.h
 ln -s mariadb_config %{buildroot}%{_bindir}/mysql_config
 ln -s mariadb_version.h %{buildroot}%{_includedir}/mysql/mysql_version.h
 mkdir -p %{buildroot}%{_sysconfdir}/
@@ -93,6 +91,12 @@ end
 %{_libdir}/*.so
 
 %changelog
+* Mon Jan 13 2020 openEuler Buildteam <buildteam@openeuler.org> - 3.0.6-6
+- Type:enhance
+- ID:NA
+- SUG:restart
+- DESC:repackaged
+
 * Wed Jan 8 2020 openEuler Buildteam <buildteam@openeuler.org> - 3.0.6-5
 - Type:enhance
 - ID:NA
