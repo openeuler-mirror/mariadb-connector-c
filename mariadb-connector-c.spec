@@ -89,7 +89,7 @@ end
 %dir %{_includedir}/mysql
 %{_includedir}/mysql/*
 %{_libdir}/*.so
-%{_libdir}/pagconfig/libmariadb.pc
+%{_libdir}/pkgconfig/libmariadb.pc
 
 %changelog
 * Thu Jul 30 2020 yanglongkang <yanglongkang@huawei.com> - 3.1.9-1
