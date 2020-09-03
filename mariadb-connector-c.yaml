@@ -1,5 +1,5 @@
 version_control: github
-src_repo: MariaDB/mariadb-connctor-c
+src_repo: mariadb-corporation/mariadb-connector-c
 tag_prefix: ^v
 seperator: .
 
