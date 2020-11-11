@@ -1,6 +1,6 @@
 Name:           mariadb-connector-c
-Version:        3.1.9
-Release:       	1
+Version:        3.0.6
+Release:       	7
 Summary:        MariaDB connector library in C
 License:        LGPLv2+
 URL:            https://github.com/MariaDB/mariadb-connector-c
@@ -89,9 +89,11 @@ end
 %dir %{_includedir}/mysql
 %{_includedir}/mysql/*
 %{_libdir}/*.so
-%{_libdir}/pkgconfig/libmariadb.pc
 
 %changelog
+* Tue Nov 10 2020 yanglongkang <yanglongkang@huawei.com> - 3.0.6-7
+- Temporarily roll back the version 3.0.6 to resolve the conflict
+
 * Thu Jul 30 2020 yanglongkang <yanglongkang@huawei.com> - 3.1.9-1
 - update to 3.1.9 version
 
