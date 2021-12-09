@@ -1,6 +1,6 @@
 Name:           mariadb-connector-c
-Version:        3.0.6
-Release:        9
+Version:        3.1.13
+Release:        1
 Summary:        MariaDB connector library in C
 License:        LGPLv2+
 URL:            https://github.com/MariaDB/mariadb-connector-c
@@ -89,8 +89,12 @@ end
 %dir %{_includedir}/mysql
 %{_includedir}/mysql/*
 %{_libdir}/*.so
+%{_libdir}/pkgconfig/libmariadb.pc
 
 %changelog
+* Thu Dec 9 2021 yanglongkang <yanglongkang@huawei.com> - 3.1.13-1
+- update package to 3.1.13
+
 * Fri Jul 30 2021 chenyanpanHW <chenyanpan@huawei.com> - 3.0.6-9
 - DESC: delete -S git from %autosetup, and delete BuildRequires git
 
