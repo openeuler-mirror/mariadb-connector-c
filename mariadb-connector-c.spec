@@ -1,13 +1,13 @@
 Name:           mariadb-connector-c
-Version:        3.0.6
-Release:        8
+Version:        3.1.13
+Release:        1
 Summary:        MariaDB connector library in C
 License:        LGPLv2+
 URL:            https://github.com/MariaDB/mariadb-connector-c
 Source0:        https://downloads.mariadb.com/Connectors/c/connector-c-%{version}/mariadb-connector-c-%{version}-src.tar.gz
 
 BuildRequires:  libcurl-devel zlib-devel openssl-devel
-BuildRequires:  cmake git gcc
+BuildRequires:  cmake gcc
 Provides:       %{name}-config%{?_isa} %{name}-config
 Obsoletes:      %{name}-config
 
@@ -26,7 +26,7 @@ Requires:       openssl-devel
 This package includes library and header files for development.
 
 %prep
-%autosetup -n %{name}-%{version}-src -p1 -S git
+%autosetup -n %{name}-%{version}-src -p1
 
 %build
 %cmake . \
@@ -89,8 +89,12 @@ end
 %dir %{_includedir}/mysql
 %{_includedir}/mysql/*
 %{_libdir}/*.so
+%{_libdir}/pkgconfig/libmariadb.pc
 
 %changelog
+* Thu Dec 9 2021 yanglongkang <yanglongkang@huawei.com> - 3.1.13-1
+- update package to 3.1.13
+
 * Tue Jun 29 2021 zhouwenpei <zhouwenpei1@huawei.com> - 3.0.6-8
 - add buildrequire gcc
 
