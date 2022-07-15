@@ -1,6 +1,6 @@
 Name:           mariadb-connector-c
 Version:        3.1.13
-Release:        1
+Release:        2
 Summary:        MariaDB connector library in C
 License:        LGPLv2+
 URL:            https://github.com/MariaDB/mariadb-connector-c
@@ -47,7 +47,6 @@ This package includes library and header files for development.
 %make_build
 
 
-
 %install
 %make_install
 ln -s mariadb_config %{buildroot}%{_bindir}/mysql_config
@@ -89,9 +88,16 @@ end
 %dir %{_includedir}/mysql
 %{_includedir}/mysql/*
 %{_libdir}/*.so
+%ifarch loongarch64
+%{_prefix}/lib/pkgconfig/libmariadb.pc
+%else
 %{_libdir}/pkgconfig/libmariadb.pc
+%endif
 
 %changelog
+* Wed Jul 13 2022 Ge Wang <wangge20@h-partners.com> - 3.1.13-2
+- modify libdir in loongarch64 architecture
+
 * Thu Dec 9 2021 yanglongkang <yanglongkang@huawei.com> - 3.1.13-1
 - update package to 3.1.13
 
