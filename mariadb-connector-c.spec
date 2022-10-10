@@ -1,10 +1,13 @@
 Name:           mariadb-connector-c
 Version:        3.0.6
-Release:       	8
+Release:       	9
 Summary:        MariaDB connector library in C
 License:        LGPLv2+
 URL:            https://github.com/MariaDB/mariadb-connector-c
 Source0:        https://downloads.mariadb.com/Connectors/c/connector-c-%{version}/mariadb-connector-c-%{version}-src.tar.gz
+
+Patch0001:	0001-CVE-2022-37434.patch
+Patch0002:	0002-CVE-2022-37434.patch
 
 BuildRequires:  libcurl-devel zlib-devel openssl-devel
 BuildRequires:  cmake git
@@ -93,6 +96,13 @@ end
 %{_libdir}/*.so
 
 %changelog
+* Mon Oct 10 2022 Jiangtian Feng <fengjiangtian@huawei.com> -3.0.6-9
+- Type:CVE
+- CVE:CVE-2022-37434
+- SUG:NA
+- DESC: fix CVE-2022-37434
+- fix CVE-2022-37434
+
 * Tue Jul 27 2021 yanglongkang <yanglongkang@huawei.com> - 3.0.6-8
 - fix CVE-2020-13249
 
