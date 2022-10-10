@@ -6,6 +6,9 @@ License:        LGPLv2+
 URL:            https://github.com/MariaDB/mariadb-connector-c
 Source0:        https://downloads.mariadb.com/Connectors/c/connector-c-%{version}/mariadb-connector-c-%{version}-src.tar.gz
 
+Patch0001:	0001-CVE-2022-37434.patch
+Patch0002:	0002-CVE-2022-37434.patch
+
 BuildRequires:  libcurl-devel zlib-devel openssl-devel
 BuildRequires:  cmake git
 Provides:       %{name}-config%{?_isa} %{name}-config
