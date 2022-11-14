@@ -1,6 +1,6 @@
 Name:           mariadb-connector-c
 Version:        3.1.13
-Release:        2
+Release:        3
 Summary:        MariaDB connector library in C
 License:        LGPLv2+
 URL:            https://github.com/MariaDB/mariadb-connector-c
@@ -92,9 +92,16 @@ end
 %dir %{_includedir}/mysql
 %{_includedir}/mysql/*
 %{_libdir}/*.so
+%ifarch loongarch64
+%{_prefix}/lib/pkgconfig/libmariadb.pc
+%else
 %{_libdir}/pkgconfig/libmariadb.pc
+%endif
 
 %changelog
+* Mon Nov 14 2022 zhaozhen <zhaozhen@loongson.cn> - 3.1.13-3
+- Add loongarch support
+
 * Mon Oct 10 2022 Jiangtian Feng <fengjiangtian@huawei.com> -3.1.13-2
 - Type:CVE
 - CVE:CVE-2022-37434
