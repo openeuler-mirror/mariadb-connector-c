@@ -1,6 +1,6 @@
 Name:           mariadb-connector-c
 Version:        3.1.13
-Release:        3
+Release:        4
 Summary:        MariaDB connector library in C
 License:        LGPLv2+
 URL:            https://github.com/MariaDB/mariadb-connector-c
@@ -13,6 +13,7 @@ Obsoletes:      %{name}-config
 
 Patch0001:	0001-CVE-2022-37434.patch
 Patch0002:	0002-CVE-2022-37434.patch
+Patch0003:	mariadb-connector-c-3.1.13-src-sw.patch
 
 %description
 This package is used for connecting C/C++ programs to MariaDB and
@@ -99,6 +100,9 @@ end
 %endif
 
 %changelog
+* Mon Dec 16 2022 Jiangtian Feng <fengjiangtian@huawei.com> - 3.1.13-4
+- Add sw64 architecture
+
 * Mon Nov 14 2022 zhaozhen <zhaozhen@loongson.cn> - 3.1.13-3
 - Add loongarch support
 
