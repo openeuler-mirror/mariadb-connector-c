@@ -1,6 +1,6 @@
 Name:           mariadb-connector-c
 Version:        3.1.13
-Release:        5
+Release:        6
 Summary:        MariaDB connector library in C
 License:        LGPLv2+
 URL:            https://github.com/MariaDB/mariadb-connector-c
@@ -10,7 +10,7 @@ Patch0001:	0001-CVE-2022-37434.patch
 Patch0002:	0002-CVE-2022-37434.patch
 Patch0003:      mariadb-connector-c-3.1.13-src-sw.patch
 
-BuildRequires:  libcurl-devel zlib-devel compat-openssl11-devel
+BuildRequires:  libcurl-devel zlib-devel openssl-devel
 BuildRequires:  cmake gcc
 Provides:       %{name}-config%{?_isa} %{name}-config
 Obsoletes:      %{name}-config
@@ -24,7 +24,7 @@ MySQL database.
 %package devel
 Summary:        Mariadb-connector-c library and header files
 Requires:       %{name} = %{version}-%{release}
-Requires:       compat-openssl11-devel
+Requires:       openssl-devel
 
 %description devel
 This package includes library and header files for development.
@@ -100,6 +100,9 @@ end
 %endif
 
 %changelog
+* Tue Feb 07 2023 peijiankang<peijiankang@kylinos.cn> - 3.1.13-6
+- Revert the compilation dependency of compat-openssl to openssl 
+
 * Mon Feb 06 2023 peijiankang<peijiankang@kylinos.cn> - 3.1.13-5
 - Change the compilation dependency of openssl to compat-openssl 
 
