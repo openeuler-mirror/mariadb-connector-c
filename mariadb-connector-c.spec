@@ -1,6 +1,6 @@
 Name:           mariadb-connector-c
 Version:        3.1.13
-Release:        6
+Release:        7
 Summary:        MariaDB connector library in C
 License:        LGPLv2+
 URL:            https://github.com/MariaDB/mariadb-connector-c
@@ -93,13 +93,16 @@ end
 %dir %{_includedir}/mysql
 %{_includedir}/mysql/*
 %{_libdir}/*.so
-%ifarch loongarch64
+%ifarch loongarch64 riscv64
 %{_prefix}/lib/pkgconfig/libmariadb.pc
 %else
 %{_libdir}/pkgconfig/libmariadb.pc
 %endif
 
 %changelog
+* Thu Mar 30 2023 laokz <zhangkai@iscas.ac.cn> - 3.1.13-7
+- Fix riscv64 pkgconfig directory
+
 * Tue Feb 07 2023 peijiankang<peijiankang@kylinos.cn> - 3.1.13-6
 - Revert the compilation dependency of compat-openssl to openssl 
 
